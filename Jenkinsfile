@@ -28,7 +28,6 @@ pipeline {
             }
             steps {
                 script {
-                    sh "docker logout"
                     docker.withRegistry('', 'dockerhub_login') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
