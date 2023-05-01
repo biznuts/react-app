@@ -5,8 +5,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci --silent
-# https://www.npmjs.com/package/react-scripts?activeTab=versions
-RUN npm install react-scripts@5.0.1 --silent
+RUN npm install react-scripts@3.4.1 --silent
 COPY . ./
 RUN npm run build
 
